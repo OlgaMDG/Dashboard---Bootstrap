@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!------------------------------------------ Barre de navigation latérale ------------------------------------------>
+  <div class="sidebar">
+    <h2 class="p-3">Tableau de bord</h2>
+
+    <!-- Les sections -->
+    <a href="#" onclick="showSection('accueil')">Accueil</a>
+    <a href="#" onclick="showSection('statistiques')">Statistiques</a>
+    <a href="#" onclick="showSection('utilisateurs')">Utilisateurs</a>
+    <a href="#" onclick="showSection('parametres')">Paramètres</a>
+  </div>
+
+  <!------------------------------------------ Contenu principal ------------------------------------------>
+  <div class="content">
+
+    <!---------- Section accueil ou section active par défaut ---------->
+    <div id="accueil" class="section active">
+      <h1>Accueil</h1>
+      <p>Bienvenue sur le tableau de bord. Utilisez les menus à gauche pour naviguer.</p>
+    </div>
+    
+    <!---------- Section statistique avec Graphique ---------->
+    <div id="statistiques" class="section">
+      <h1>Statistiques</h1>
+      <p>Voici vos statistiques de performance.</p>
+
+      <!-- Graphique -->
+      <canvas id="myChart"></canvas>    
+
+      <!-- Récapes -->
+      <div class="row mt-5">
+        <div class="col-md-4">
+          <div class="card text-white bg-primary mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Visites</h5>
+              <p class="card-text">1,234 visites ce mois.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card text-white bg-success mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Revenus</h5>
+              <p class="card-text">$12,345 de revenus générés.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!---------- Section Utilisateurs avec Tableau ---------->
+    <div id="utilisateurs" class="section">
+      <h1>Utilisateurs</h1>
+      <p>Liste des utilisateurs inscrits sur la plateforme.</p>
+
+      <!-- Tableau -->
+      <table class="table table-hover">
+
+        <!-- En-tête -->
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Rôle</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+
+        <!-- Corps -->
+        <tbody>
+
+          <!-- Ligne 1 -->
+          <tr>
+            <th scope="row">1</th>
+            <td>Jean Dupont</td>
+            <td>jean.dupont@example.com</td>
+            <td>Admin</td>
+            <td><span class="badge bg-success">Actif</span></td>
+          </tr>
+
+          <!-- Ligne 2 -->
+          <tr>
+            <th scope="row">2</th>
+            <td>Marie Martin</td>
+            <td>marie.martin@example.com</td>
+            <td>Utilisateur</td>
+            <td><span class="badge bg-warning">En attente</span></td>
+          </tr>
+
+          <!-- Ligne 3 -->
+          <tr>
+            <th scope="row">3</th>
+            <td>Paul Durand</td>
+            <td>paul.durand@example.com</td>
+            <td>Utilisateur</td>
+            <td><span class="badge bg-danger">Suspendu</span></td>
+          </tr>
+
+          <!-- Ligne 4 -->
+          <tr>
+            <th scope="row">4</th>
+            <td>Julie Bernard</td>
+            <td>julie.bernard@example.com</td>
+            <td>Modérateur</td>
+            <td><span class="badge bg-success">Actif</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Les scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
